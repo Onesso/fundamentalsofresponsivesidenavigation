@@ -1,0 +1,113 @@
+<mat-toolbar class="toolbarclass">
+  <button mat-icon-button aria-label="Menu icon" (click)="toggleMenu()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <h1>Sidenavigation</h1>
+</mat-toolbar>
+<mat-sidenav-container autosize="true">
+  <mat-sidenav
+    [ngClass]="!isCollapsed ? 'expanded' : 'mobileSideNav'"
+    [mode]="isMobile ? 'over' : 'side'"
+    [opened]="isMobile ? 'false' : 'true'"
+  >
+    <mat-nav-list class="navclass">
+      <!-- Dashboard -->
+      <a mat-list-item>
+        <span class="entry">
+          <mat-icon>house</mat-icon>
+          @if (isCollapsed) {
+          <span>Dashboard</span>
+          }
+        </span>
+      </a>
+
+      <!-- Library -->
+      <a mat-list-item>
+        <span class="entry">
+          <mat-icon>library_music</mat-icon>
+          @if (isCollapsed) {
+          <span>Library</span>
+          }
+        </span>
+      </a>
+
+      <!-- Search -->
+      <a mat-list-item>
+        <span class="entry">
+          <mat-icon>search</mat-icon>
+          @if (isCollapsed) {
+          <span>Search</span>
+          }
+        </span>
+      </a>
+
+      <!-- Playlists -->
+      <a mat-list-item>
+        <span class="entry">
+          <mat-icon>queue_music</mat-icon>
+          @if (isCollapsed) {
+          <span>Playlists</span>
+          }
+        </span>
+      </a>
+
+      <!-- Favorites -->
+      <a mat-list-item>
+        <span class="entry">
+          <mat-icon>favorite</mat-icon>
+          @if (isCollapsed) {
+          <span>Favorites</span>
+          }
+        </span>
+      </a>
+
+      <!-- Recently Played -->
+      <a mat-list-item>
+        <span class="entry">
+          <mat-icon>history</mat-icon>
+          @if (isCollapsed) {
+          <span>Recently Played</span>
+          }
+        </span>
+      </a>
+
+      <!-- Settings -->
+      <a mat-list-item>
+        <span class="entry">
+          <mat-icon>settings</mat-icon>
+          @if (isCollapsed) {
+          <span>Settings</span>
+          }
+        </span>
+      </a>
+
+      <!-- Logout -->
+      <a mat-list-item>
+        <span class="entry">
+          <mat-icon>logout</mat-icon>
+          @if (isCollapsed) {
+          <span>Logout</span>
+          }
+        </span>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div class="root">
+      <!-- Header -->
+      <header class="header">
+        <h1>Good Evening</h1>
+      </header>
+
+      <!-- Main content -->
+      <main class="content">
+        <section class="playlist-grid">
+          <div class="playlist-card">Liked Songs</div>
+          <div class="playlist-card">Top Hits</div>
+          <div class="playlist-card">Discover Weekly</div>
+          <div class="playlist-card">Release Radar</div>
+        </section>
+      </main>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
